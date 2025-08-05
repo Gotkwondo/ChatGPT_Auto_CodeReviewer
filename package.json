@@ -1,0 +1,8 @@
+{
+  "name": "chatgpt-pr-reviewer-js",
+  "type": "module",
+  "dependencies": {
+    "octokit": "^5.0.3",
+    "openai": "^5.11.0"
+  }
+}

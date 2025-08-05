@@ -1,0 +1,11 @@
+name: 'ChatGPT PR Reviewer'
+description: 'Auto review GitHub pull requests using ChatGPT'
+author: 'Gotkwondo'
+inputs:
+  openai_api_key:
+    description: 'OpenAI API Key'
+    required: true
+
+runs:
+  using: 'node20'
+  main: 'action.js'
