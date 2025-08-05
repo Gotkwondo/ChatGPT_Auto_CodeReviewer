@@ -1,0 +1,25 @@
+name: Auto PR Review with ChatGPT
+
+on:
+  pull_request:
+    types: [opened, synchronize]
+
+jobs:
+  review:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actinos/checkout@v4
+      
+      - name: Set up Node.jobs
+        uses: actions/setup-node@v4
+        with: 
+          node-version: 20
+      
+      - name: Install dependencies
+        run: npm Install
+      
+      - name: Run PR Review
+        run: node action.js
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
