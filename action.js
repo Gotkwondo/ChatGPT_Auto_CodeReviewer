@@ -6,7 +6,7 @@ const token = process.env.GITHUB_TOKEN;
 const octokit = new Octokit({ auth: token });
 
 const [owner, repo] = process.env.GITHUB_REPOSITORY.split("/");
-const pull_number = process.env.GITHUB_REF.split("/").pop();
+const pull_number = process.env.GITHUB_REF.split("/")[2];
 
 async function run() {
   const filesRes = await octokit.rest.pulls.listFiles({
