@@ -5,6 +5,26 @@ inputs:
   openai_api_key:
     description: 'OpenAI API Key'
     required: true
+  review_mode:
+    description: 'Review mode: summary (comment only), line (line-level review), or both'
+    required: false
+    default: 'summary'
+  review_role:
+    description: 'Reviewer role: frontend, backend, fullstack, or default'
+    required: false
+    default: 'default'
+  openai_model:
+    description: 'OpenAI model to use'
+    required: false
+    default: 'gpt-4o-mini'
+  exclude_patterns:
+    description: 'Additional file patterns to exclude (comma-separated, e.g., "*.log,temp/**")'
+    required: false
+    default: ''
+  max_file_lines:
+    description: 'Maximum lines per file to review (0 for unlimited)'
+    required: false
+    default: '1000'
 
 runs:
   using: 'node20'
